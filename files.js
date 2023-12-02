@@ -44,7 +44,7 @@ function removeContact(contactId) {
             console.log("There was an error", error)
         }
     const contacts = JSON.parse(data.toString())
-    const indexADelete = contacts.findIndex(objeto => objeto.name === contactId);
+    const indexADelete = contacts.findIndex(objeto => objeto.id === contactId);
 
     if (indexADelete !== -1){
         contacts.splice(indexADelete, 1);
@@ -101,62 +101,3 @@ module.exports = {
     addContact
 }
 
-// fs.readFile(path.join(__dirname,"./db/contacts.json"),
-// {
-//     flag: "r",
-// },
-// (error, data) => {
-//     if(error){
-//         console.log("There was an error", error)
-//     }
-
-//     const contacts = JSON.parse(data.toString())
-
-    
-
-//     console.table(contacts);
-
-    
-
-//     function getContactById(contactId){
-//         contacts.forEach((contact) => {
-//             if(contact.id == contactId){
-//                 console.table(contacts);
-//             }
-//         });
-//     }
-
-//     function removeContact(contactId) {
-
-//         const indexADelete = contacts.findIndex(objeto => objeto.id === contactId);
-
-//             if (indexADelete !== -1){
-//                 contacts.splice(indexADelete, 1);
-
-//                 const newContent = JSON.stringify(contacts, null, 2);
-
-//                 fs.writeFile(archivo, newContent, 'utf8', error => {
-//                     if (error) {
-//                       console.error('Error al escribir en el archivo:', error);
-//                     } else {
-//                       console.log('Objeto eliminado correctamente.');
-//                     }
-//                   });
-
-//             }else {
-//                 console.log('Objeto no encontrado con el ID proporcionado.');
-//             }
-//         }
-      
-//       function addContact(name, email, phone) {
-       
-//       }
-    
-//       module.exports = {
-//           listContacts,
-//           getContactById,
-//           removeContact,
-//           addContact
-//       } 
-// }
-// );

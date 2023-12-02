@@ -12,9 +12,6 @@ program.option(
 );
 
 
-// listContacts();
-// getContactById('05olLMgyVQdWRwgKfg5J6');
-// removeContact('05olLMgyVQdWRwgKfg5J6' );
 
 const rl = readline.createInterface({
     input: process.stdin,
